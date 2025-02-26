@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国国宝 - 大熊猫</title>
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #8BC34A;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            background: #f5f5f5;
+        }
+
+        /* 导航栏 */
+        .navbar {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* 主要内容容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* 设备专用内容 */
+        .mobile-only { display: none; }
+        .desktop-only { display: block; }
+
+        /* 卡片样式 */
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* 图片样式 */
+        .panda-img {
+            width: 100%;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        /* PC端专属样式 */
+        .scientific-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        /* 移动端优化 */
+        @media (max-width: 768px) {
+            .mobile-only { display: block; }
+            .desktop-only { display: none; }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .card {
+                padding: 1rem;
+            }
+
+            .mobile-facts {
+                display: flex;
+                gap: 1rem;
+                overflow-x: auto;
+                padding: 1rem 0;
+            }
+
+            .fact-card {
+                flex: 0 0 80%;
+                background: white;
+                border-radius: 8px;
+                padding: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>🐼 大熊猫保护计划</h1>
+    </nav>
+
+    <div class="container">
+        <!-- PC端内容 -->
+        <div class="desktop-only">
+            <div class="scientific-info card">
+                <div>
+                    <h3>科学分类</h3>
+                    <ul>
+                        <li>界：动物界</li>
+                        <li>门：脊索动物门</li>
+                        <li>纲：哺乳纲</li>
+                        <li>科：熊科</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>保护现状</h3>
+                    <p>IUCN等级：易危(VU)</p>
+                    <p>中国保护等级：一级</p>
+                </div>
+                <div>
+                    <h3>种群数量</h3>
+                    <p>野生：约1864只</p>
+                    <p>圈养：约633只</p>
+                </div>
+                <div>
+                    <h3>了解更多</h3>
+                    <a href="https://www.bilibili.com">点击这里看精彩熊猫表演</a>
+            </div>
+
+            <div class="card">
+                <h2>栖息地分布</h2>
+                <img src="panda-map.jpg" alt="大熊猫分布图" class="panda-img">
+                <p>主要分布于四川、陕西和甘肃的山区...</p>
+            </div>
+        </div>
+
+        <!-- 移动端内容 -->
+        <div class="mobile-only">
+            <div class="card">
+                <img src="panda-mobile.jpg" alt="大熊猫" class="panda-img">
+                <h2>快速了解</h2>
+                <div class="mobile-facts">
+                    <div class="fact-card">
+                        <h3>📌 分类</h3>
+                        <p>熊科 / 哺乳动物</p>
+                        <!-- 插入url -->
+                    </div>
+                    <div class="fact-card">
+                        <h3>🏞️ 栖息地</h3>
+                        <p>中国西南山区</p>
+                    </div>
+                    <div class="fact-card">
+                        <h3>❤️ 保护等级</h3>
+                        <p>国家一级保护</p>
+                    </div>
+                    <div class="fact-card">
+                        <h3>🐾 了解更多</h3>
+                        <a href="https://www.ustc.com">点击这里看精彩熊猫表演</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>有趣事实</h2>
+                <ul class="mobile-list">
+                    <li>🐾 每天进食12-16小时</li>
+                    <li>🎍 99%的食物是竹子</li>
+                    <li>👶 幼崽只有老鼠大小</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 共同内容 -->
+        <div class="card">
+            <h2 class="desktop-only">生活习性</h2>
+            <h2 class="mobile-only">习性特点</h2>
+            <div class="desktop-only">
+                <p>大熊猫具有典型的独居动物特征，每天花费一半时间进食，另一半时间休息...</p>
+                <table class="habit-table">
+                    <!-- 详细习性表格 -->
+                </table>
+            </div>
+            <div class="mobile-only">
+                <p>✅ 独居动物<br>
+                ✅ 擅长爬树<br>
+                ✅ 嗅觉灵敏</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
