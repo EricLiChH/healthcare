@@ -1,2 +1,2 @@
 # Health Care
-The official github page for [https://github.com/EricLiChH/healthcare](https://ericlichh.github.io/healthcare/) to watch movies.
+The official github page for people over 18 to watch movies.
