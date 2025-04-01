@@ -1,191 +1,1220 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>中国国宝 - 大熊猫</title>
-    <style>
-        :root {
-            --primary-color: #4CAF50;
-            --secondary-color: #8BC34A;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Microsoft YaHei', sans-serif;
-            line-height: 1.6;
-            background: #f5f5f5;
-        }
-
-        /* 导航栏 */
-        .navbar {
-            background: var(--primary-color);
-            color: white;
-            padding: 1.2rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        /* 主要内容容器 */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        /* 设备专用内容 */
-        .mobile-only { display: none; }
-        .desktop-only { display: block; }
-
-        /* 卡片样式 */
-        .card {
-            background: white;
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        /* 图片样式 */
-        .panda-img {
-            width: 100%;
-            border-radius: 8px;
-            margin: 1rem 0;
-        }
-
-        /* PC端专属样式 */
-        .scientific-info {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        /* 移动端优化 */
-        @media (max-width: 768px) {
-            .mobile-only { display: block; }
-            .desktop-only { display: none; }
-
-            .container {
-                padding: 1rem;
-            }
-
-            .card {
-                padding: 1rem;
-            }
-
-            .mobile-facts {
-                display: flex;
-                gap: 1rem;
-                overflow-x: auto;
-                padding: 1rem 0;
-            }
-
-            .fact-card {
-                flex: 0 0 80%;
-                background: white;
-                border-radius: 8px;
-                padding: 1rem;
-                text-align: center;
-            }
-        }
-    </style>
-</head>
-<body>
-    <nav class="navbar">
-        <h1>🐼 大熊猫保护计划</h1>
-    </nav>
-
-    <div class="container">
-        <!-- PC端内容 -->
-        <div class="desktop-only">
-            <div class="scientific-info card">
-                <div>
-                    <h3>科学分类</h3>
-                    <ul>
-                        <li>界：动物界</li>
-                        <li>门：脊索动物门</li>
-                        <li>纲：哺乳纲</li>
-                        <li>科：熊科</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>保护现状</h3>
-                    <p>IUCN等级：易危(VU)</p>
-                    <p>中国保护等级：一级</p>
-                </div>
-                <div>
-                    <h3>种群数量</h3>
-                    <p>野生：约1864只</p>
-                    <p>圈养：约633只</p>
-                </div>
-                <div>
-                    <h3>了解更多</h3>
-                    <a href="https://www.bilibili.com">点击这里看精彩熊猫表演</a>
-            </div>
-
-            <div class="card">
-                <h2>栖息地分布</h2>
-                <img src="panda-map.jpg" alt="大熊猫分布图" class="panda-img">
-                <p>主要分布于四川、陕西和甘肃的山区...</p>
-            </div>
-        </div>
-
-        <!-- 移动端内容 -->
-        <div class="mobile-only">
-            <div class="card">
-                <img src="panda-mobile.jpg" alt="大熊猫" class="panda-img">
-                <h2>快速了解</h2>
-                <div class="mobile-facts">
-                    <div class="fact-card">
-                        <h3>📌 分类</h3>
-                        <p>熊科 / 哺乳动物</p>
-                        <!-- 插入url -->
-                    </div>
-                    <div class="fact-card">
-                        <h3>🏞️ 栖息地</h3>
-                        <p>中国西南山区</p>
-                    </div>
-                    <div class="fact-card">
-                        <h3>❤️ 保护等级</h3>
-                        <p>国家一级保护</p>
-                    </div>
-                    <div class="fact-card">
-                        <h3>🐾 了解更多</h3>
-                        <a href="https://www.ustc.com">点击这里看精彩熊猫表演</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <h2>有趣事实</h2>
-                <ul class="mobile-list">
-                    <li>🐾 每天进食12-16小时</li>
-                    <li>🎍 99%的食物是竹子</li>
-                    <li>👶 幼崽只有老鼠大小</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- 共同内容 -->
-        <div class="card">
-            <h2 class="desktop-only">生活习性</h2>
-            <h2 class="mobile-only">习性特点</h2>
-            <div class="desktop-only">
-                <p>大熊猫具有典型的独居动物特征，每天花费一半时间进食，另一半时间休息...</p>
-                <table class="habit-table">
-                    <!-- 详细习性表格 -->
-                </table>
-            </div>
-            <div class="mobile-only">
-                <p>✅ 独居动物<br>
-                ✅ 擅长爬树<br>
-                ✅ 嗅觉灵敏</p>
-            </div>
-        </div>
+<html class="has-navbar-fixed-top has-navbar-fixed-bottom">
+  <head>
+    <title> JavDB, Online information source for adult movies </title>
+      <meta name='description' content='An magnet links sharing website for adult movies, You can search, review, collect and organize for adult movies' />
+      <meta name='keywords' content='JavDB,Magnet Links Sharing,Adult Video Magnet Links,Japanese Adult Movies,JAV ID Search,Censored,Uncensored' />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name='theme' content='auto' />
+      <meta content='True' name='HandheldFriendly' />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+      <meta name="renderer" content="webkit" />
+      <meta name="force-rendering" content="webkit"/>
+      <link rel="search" type="application/opensearchdescription+xml" title="searchTitle" href="/opensearch.xml">
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+      <link rel="manifest" href="/manifest.json">
+      <link rel="preconnect" href="https://c0.jdbstatic.com/">
+      <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="wAPqfK1_iEwgIn9Bro5WULI_ItwQjH6aMrkGo430sbtfH0O66k4EmsStQlw_UwrE-alZKop_DhyvusATh00aRw" />
+      <meta name="csp-nonce" />
+      <link rel="stylesheet" media="all" href="/packs/css/app-f45f2d72.css" />
+      <script src="/packs/js/app-e59c8b5d8adedd2a1f1d.js"></script>
+      
+    </head>
+    <body data-lang="en" data-domain="https://javdb456.com">
+      <nav class="app-desktop-banner" style="display: none;">
+  <div class="container">
+    <div class="close">
+      <button>&nbsp;</button>
     </div>
-</body>
-</html>
+    <div class="content" data-href="https://jav525.app">
+      <div class="logo">
+        <img src="https://c0.jdbstatic.com/images/logo_120x120.png" alt="Logo" width="120" height="120">
+      </div>
+      <div class="slogen">
+        <span class="full" style="display: none;">Better experience with official App, Built-in Magnet Link Search Engine</span>
+        <span class="short">Download Official App</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+      
+      <nav class="navbar is-fixed-top is-black is-fluid main-nav" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://javdb.com">
+      <svg width="110" height="37.45" viewBox="0 0 326 111" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="166" y="11" width="160" height="93" fill="#2F80ED"/>
+        <path d="M196.781 27.0078H213.41C217.736 27.0078 221.445 27.4089 224.539 28.2109C227.633 29.013 230.44 30.5169 232.961 32.7227C239.521 38.3372 242.801 46.8737 242.801 58.332C242.801 62.1133 242.471 65.5651 241.812 68.6875C241.154 71.8099 240.137 74.6315 238.762 77.1523C237.387 79.6445 235.625 81.8789 233.477 83.8555C231.786 85.3737 229.939 86.5911 227.934 87.5078C225.928 88.4245 223.766 89.069 221.445 89.4414C219.154 89.8138 216.561 90 213.668 90H197.039C194.719 90 192.971 89.6562 191.797 88.9688C190.622 88.2526 189.849 87.2643 189.477 86.0039C189.133 84.7148 188.961 83.0534 188.961 81.0195V34.8281C188.961 32.0781 189.577 30.0872 190.809 28.8555C192.04 27.6237 194.031 27.0078 196.781 27.0078ZM201.723 37.1055V79.8594H211.391C213.51 79.8594 215.172 79.8021 216.375 79.6875C217.578 79.5729 218.824 79.2865 220.113 78.8281C221.402 78.3698 222.52 77.7253 223.465 76.8945C227.733 73.2852 229.867 67.069 229.867 58.2461C229.867 52.0299 228.922 47.375 227.031 44.2812C225.169 41.1875 222.863 39.2253 220.113 38.3945C217.363 37.5352 214.04 37.1055 210.145 37.1055H201.723ZM280.914 90H261.664C258.885 90 256.895 89.3841 255.691 88.1523C254.517 86.8919 253.93 84.901 253.93 82.1797V34.8281C253.93 32.0495 254.531 30.0586 255.734 28.8555C256.966 27.6237 258.943 27.0078 261.664 27.0078H282.074C285.082 27.0078 287.689 27.194 289.895 27.5664C292.1 27.9388 294.077 28.6549 295.824 29.7148C297.314 30.6029 298.632 31.7344 299.777 33.1094C300.923 34.4557 301.797 35.9596 302.398 37.6211C303 39.2539 303.301 40.987 303.301 42.8203C303.301 49.1224 300.15 53.7344 293.848 56.6562C302.126 59.2917 306.266 64.4193 306.266 72.0391C306.266 75.5625 305.363 78.7422 303.559 81.5781C301.754 84.3854 299.319 86.4622 296.254 87.8086C294.335 88.6107 292.129 89.1836 289.637 89.5273C287.145 89.8424 284.237 90 280.914 90ZM279.969 62.0273H266.691V80.418H280.398C289.021 80.418 293.332 77.3099 293.332 71.0938C293.332 67.9141 292.215 65.6081 289.98 64.1758C287.746 62.7435 284.409 62.0273 279.969 62.0273ZM266.691 36.5898V52.875H278.379C281.559 52.875 284.008 52.5742 285.727 51.9727C287.474 51.3711 288.806 50.2253 289.723 48.5352C290.439 47.332 290.797 45.9857 290.797 44.4961C290.797 41.3164 289.665 39.2109 287.402 38.1797C285.139 37.1198 281.688 36.5898 277.047 36.5898H266.691Z" fill="white"/>
+        <path d="M47.4375 29.5469V65.5469C47.4375 68.6719 47.2969 71.3281 47.0156 73.5156C46.7656 75.7031 46.1719 77.9219 45.2344 80.1719C43.6719 83.9531 41.0938 86.9062 37.5 89.0312C33.9062 91.125 29.5312 92.1719 24.375 92.1719C19.7188 92.1719 15.8281 91.4375 12.7031 89.9688C9.60938 88.5 7.10938 86.125 5.20312 82.8438C4.20312 81.0938 3.39062 79.0781 2.76562 76.7969C2.14062 74.5156 1.82812 72.3438 1.82812 70.2812C1.82812 68.0938 2.4375 66.4219 3.65625 65.2656C4.875 64.1094 6.4375 63.5312 8.34375 63.5312C10.1875 63.5312 11.5781 64.0625 12.5156 65.125C13.4531 66.1875 14.1719 67.8438 14.6719 70.0938C15.2031 72.5 15.7344 74.4219 16.2656 75.8594C16.7969 77.2969 17.6875 78.5312 18.9375 79.5625C20.1875 80.5938 21.9688 81.1094 24.2812 81.1094C30.4375 81.1094 33.5156 76.5938 33.5156 67.5625V29.5469C33.5156 26.7344 34.125 24.625 35.3438 23.2188C36.5938 21.8125 38.2812 21.1094 40.4062 21.1094C42.5625 21.1094 44.2656 21.8125 45.5156 23.2188C46.7969 24.625 47.4375 26.7344 47.4375 29.5469ZM93.9844 84.9531C90.8906 87.3594 87.8906 89.1719 84.9844 90.3906C82.1094 91.5781 78.875 92.1719 75.2812 92.1719C72 92.1719 69.1094 91.5312 66.6094 90.25C64.1406 88.9375 62.2344 87.1719 60.8906 84.9531C59.5469 82.7344 58.875 80.3281 58.875 77.7344C58.875 74.2344 59.9844 71.25 62.2031 68.7812C64.4219 66.3125 67.4688 64.6562 71.3438 63.8125C72.1562 63.625 74.1719 63.2031 77.3906 62.5469C80.6094 61.8906 83.3594 61.2969 85.6406 60.7656C87.9531 60.2031 90.4531 59.5312 93.1406 58.75C92.9844 55.375 92.2969 52.9062 91.0781 51.3438C89.8906 49.75 87.4062 48.9531 83.625 48.9531C80.375 48.9531 77.9219 49.4062 76.2656 50.3125C74.6406 51.2188 73.2344 52.5781 72.0469 54.3906C70.8906 56.2031 70.0625 57.4062 69.5625 58C69.0938 58.5625 68.0625 58.8438 66.4688 58.8438C65.0312 58.8438 63.7812 58.3906 62.7188 57.4844C61.6875 56.5469 61.1719 55.3594 61.1719 53.9219C61.1719 51.6719 61.9688 49.4844 63.5625 47.3594C65.1562 45.2344 67.6406 43.4844 71.0156 42.1094C74.3906 40.7344 78.5938 40.0469 83.625 40.0469C89.25 40.0469 93.6719 40.7188 96.8906 42.0625C100.109 43.375 102.375 45.4688 103.688 48.3438C105.031 51.2188 105.703 55.0312 105.703 59.7812C105.703 62.7812 105.688 65.3281 105.656 67.4219C105.656 69.5156 105.641 71.8438 105.609 74.4062C105.609 76.8125 106 79.3281 106.781 81.9531C107.594 84.5469 108 86.2188 108 86.9688C108 88.2812 107.375 89.4844 106.125 90.5781C104.906 91.6406 103.516 92.1719 101.953 92.1719C100.641 92.1719 99.3438 91.5625 98.0625 90.3438C96.7812 89.0938 95.4219 87.2969 93.9844 84.9531ZM93.1406 66.4375C91.2656 67.125 88.5312 67.8594 84.9375 68.6406C81.375 69.3906 78.9062 69.9531 77.5312 70.3281C76.1562 70.6719 74.8438 71.375 73.5938 72.4375C72.3438 73.4688 71.7188 74.9219 71.7188 76.7969C71.7188 78.7344 72.4531 80.3906 73.9219 81.7656C75.3906 83.1094 77.3125 83.7812 79.6875 83.7812C82.2188 83.7812 84.5469 83.2344 86.6719 82.1406C88.8281 81.0156 90.4062 79.5781 91.4062 77.8281C92.5625 75.8906 93.1406 72.7031 93.1406 68.2656V66.4375ZM125.344 48.1094L135.703 77.1719L146.859 46.8438C147.734 44.4062 148.594 42.6875 149.438 41.6875C150.281 40.6562 151.562 40.1406 153.281 40.1406C154.906 40.1406 156.281 40.6875 157.406 41.7812C158.562 42.875 159.141 44.1406 159.141 45.5781C159.141 46.1406 159.031 46.7969 158.812 47.5469C158.625 48.2969 158.391 49 158.109 49.6562C157.859 50.3125 157.562 51.0625 157.219 51.9062L144.938 82.375C144.594 83.25 144.141 84.3594 143.578 85.7031C143.047 87.0469 142.438 88.2031 141.75 89.1719C141.094 90.1094 140.266 90.8438 139.266 91.375C138.297 91.9062 137.109 92.1719 135.703 92.1719C133.891 92.1719 132.438 91.7656 131.344 90.9531C130.281 90.1094 129.484 89.2031 128.953 88.2344C128.453 87.2344 127.594 85.2812 126.375 82.375L114.188 52.2344C113.906 51.4844 113.609 50.7344 113.297 49.9844C113.016 49.2344 112.766 48.4688 112.547 47.6875C112.359 46.9062 112.266 46.2344 112.266 45.6719C112.266 44.7969 112.531 43.9375 113.062 43.0938C113.594 42.2188 114.328 41.5156 115.266 40.9844C116.203 40.4219 117.219 40.1406 118.312 40.1406C120.438 40.1406 121.891 40.75 122.672 41.9688C123.484 43.1875 124.375 45.2344 125.344 48.1094Z" fill="white"/>
+      </svg>
+    </a>
+    <a class="navbar-item navbar-search mobile-nav" data-target="search-bar-container">
+      <span class="icon is-small">
+        <i class="icon-search"></i>
+      </span>
+    </a>
+    <a role="button" class="navbar-item mobile-nav" data-target="navbar-menu-hero">
+      <span class="icon">
+        <i class="icon-bars"></i>
+      </span>
+    </a>
+    <a role="button" class="navbar-item mobile-nav" data-target="navbar-menu-user">
+      <span class="icon">
+        <i class="icon-user"></i>
+      </span>
+    </a>
+  </div>
+  <div id="navbar-menu-hero" class="navbar-menu">
+    <div class="navbar-start">
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" href="/tags?c10=1">Tags</a>
+        <div class="navbar-dropdown is-boxed">
+          <a class="navbar-item" href="/tags?c10=1">Censored</a>
+          <a class="navbar-item" href="/tags/uncensored?c10=1">Uncensored</a>
+          <a class="navbar-item" href="/tags/western?c10=1">Western</a>
+          <a class="navbar-item" href="/tags/fc2?c10=1">FC2</a>
+          <a class="navbar-item" href="/tags/anime?c10=1">Anime</a>
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" href="/rankings/movies?p=daily&amp;t=censored">Rankings</a>
+        <div class="navbar-dropdown is-boxed">
+          <a class="navbar-item" href="/rankings/playback">Top Played</a>
+          <a class="navbar-item" href="/rankings/top">TOP250</a>
+          <a class="navbar-item" href="/rankings/movies?p=daily&amp;t=censored">Censored</a>
+          <a class="navbar-item" href="/rankings/movies?p=daily&amp;t=uncensored">Uncensored</a>
+          <a class="navbar-item" href="/rankings/movies?p=daily&amp;t=western">Western</a>
+          <a class="navbar-item" href="/rankings/movies?p=daily&amp;t=fc2">FC2</a>
+          <a class="navbar-item" href="/rankings/fanza_award">FANZA(DMM.R18) Adule Award</a>
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" href="/actors">Actors</a>
+        <div class="navbar-dropdown is-boxed">
+          <a class="navbar-item" href="/actors">Recommend</a>
+          <a class="navbar-item" href="/actors/censored">Censored</a>
+          <a class="navbar-item" href="/actors/uncensored">Uncensored</a>
+          <a class="navbar-item" href="/actors/western">Western</a>
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" href="/series">Series</a>
+        <div class="navbar-dropdown is-boxed">
+          <a class="navbar-item" href="/series">Censored</a>
+          <a class="navbar-item" href="/series/uncensored">Uncensored</a>
+          <a class="navbar-item" href="/series/western">Western</a>
+          <a class="navbar-item" href="/video_codes/LUXU">LUXU</a>
+          <a class="navbar-item" href="/video_codes/ARA">ARA</a>
+          <a class="navbar-item" href="/video_codes/MAAN">MAAN</a>
+          <a class="navbar-item" href="/video_codes/MIUM">MIUM</a>
+          <a class="navbar-item" href="/video_codes/SIRO">SIRO</a>
+          <a class="navbar-item" href="/video_codes/GANA">GANA</a>
+        </div>
+      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" href="/makers">Makers</a>
+        <div class="navbar-dropdown is-boxed">
+          <a class="navbar-item" href="/makers">Censored</a>
+          <a class="navbar-item" href="/makers/uncensored">Uncensored</a>
+        </div>
+      </div>
+      <a class="navbar-item" href="/feedbacks/new">Feedback</a>
+        <a class="navbar-item has-text-white-bis" rel="nofollow noopener" target="_blank" href="https://theporndude.com/zh">ThePornDude</a>
+    </div>
+  </div>
+  <div id="navbar-menu-user" class="navbar-menu">
+    <div class="navbar-end">
+      <!-- theme -->
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link" href="/?theme=auto">Auto</a>
+        <div class="navbar-dropdown is-right">
+            <a class="navbar-item" href="/?theme=auto">Auto</a>
+            <a class="navbar-item" href="/?theme=light">Light</a>
+            <a class="navbar-item" href="/?theme=dark">Dark</a>
+        </div>
+      </div>
+        <!-- languages -->
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="/?locale=en">English</a>
+          <div class="navbar-dropdown is-right">
+              <a class="navbar-item" href="/?locale=zh">正體中文</a>
+              <a class="navbar-item" href="/?locale=en">English</a>
+          </div>
+        </div>
+      <!-- user menu -->
+        <a class="navbar-item" href="/users/new">Sign up</a>
+        <a class="navbar-item" href="/login">Sign in</a>
+    </div>
+  </div>
+</nav>
+
+      <section class="section">
+        <!-- is-fluid -->
+        <div class="container">
+          <div id="search-bar-container" class="columns search-bar-container">
+  <div class="column">
+    <div class="search-bar-wrap">
+      <div class="search-panel field has-addons">
+        <div class="control search-type">
+          <div class="select">
+            <select id="search-type">
+              <option value="all">Movie</option>
+              <option value="actor" >Actor</option>
+              <option value="series" >Series</option>
+              <option value="maker" >Maker</option>
+              <option value="director" >Director</option>
+              <option value="code" >ID</option>
+              <option value="list" >清單</option>
+            </select>
+          </div>
+        </div>
+        <div class="control is-expanded search-input">
+          <input id="video-search" class="input is-medium" data-type="all" type="text" value="" placeholder="Title/ID/Cast">
+        </div>
+        <div class="control advanced-search">
+          <a id="button-advanced-search" class="button is-info tooltip" data-auth="true" data-tooltip="Advanced Search" href="/advanced_search">
+            <span class="icon">...</span>
+</a>        </div>
+          <div class="control search-image has-left-sep">
+            <form id="form-search-image" style="display: none;" enctype="multipart/form-data" action="/search_image" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="3sOBqKN1DT8j4BPSd7q75kZgl2zCFN8lg55DlAfsNDfjhG4IbMCCmUq9i8WdGLMCy36Be1sFITGszRz0mFBs7Q" autocomplete="off" />
+              <input id="search-image-file" type="file" accept="image/jpg,image/jpeg,image/png,image/gif,video/mp4" name="image" />
+</form>            <button id="button-search-image" type="button" class="button is-medium is-info tooltip modal-button" 
+              data-auth="true" data-tooltip="Search actors by image(support jpg/png/gif/mp4)...">
+              <span class="icon">
+                <i class="icon-camera"></i>
+              </span>
+            </button>
+          </div>
+        <div class="control search-submit has-left-sep">
+          <button type="button" id="search-submit" class="button is-medium is-info">Search</button>
+        </div>
+      </div>
+      <div class="search-recent-keywords">
+        <ul>
+          <li><strong>Popular: </strong></li>
+          <li><a href="/video_codes/LUXU">LUXU</a></li>
+            <li><a href="/search?from_recent=1&amp;q=VR">VR</a></li>
+            <li><a href="/search?from_recent=1&amp;q=sone">sone</a></li>
+            <li><a href="/search?from_recent=1&amp;q=%E6%97%A0%E7%A0%81%E6%B5%81%E5%87%BA">无码流出</a></li>
+            <li><a href="/search?from_recent=1&amp;q=%E8%82%9B%E4%BA%A4">肛交</a></li>
+            <li><a href="/search?from_recent=1&amp;q=jur">jur</a></li>
+            <li><a href="/search?from_recent=1&amp;q=%E6%97%A0%E7%A0%81%E7%A0%B4%E8%A7%A3">无码破解</a></li>
+            <li><a href="/search?from_recent=1&amp;q=%E8%BF%9E%E8%A3%A4%E8%A2%9C">连裤袜</a></li>
+            <li><a href="/search?from_recent=1&amp;q=%E5%B7%A8%E4%B9%B3">巨乳</a></li>
+            <li><a href="/search?from_recent=1&amp;q=%E8%A7%92%E8%89%B2%E6%89%AE%E6%BC%94">角色扮演</a></li>
+            <li><a href="/search?from_recent=1&amp;q=%E7%86%9F%E5%A5%B3">熟女</a></li>
+            <li><a href="/search?from_recent=1&amp;q=%E6%B4%97%E8%84%B3">洗脳</a></li>
+            <li><a href="/search?from_recent=1&amp;q=%E6%AF%8D%E5%AD%90">母子</a></li>
+            <li><a href="/search?from_recent=1&amp;q=%E9%BB%91%E4%BA%BA">黑人</a></li>
+            <li><a href="/search?from_recent=1&amp;q=mida">mida</a></li>
+            <li><a href="/search?from_recent=1&amp;q=start">start</a></li>
+            <li><a href="/search?from_recent=1&amp;q=%E6%B7%B1%E5%96%89">深喉</a></li>
+            <li><a href="/search?from_recent=1&amp;q=%E5%AA%9A%E8%96%AC">媚薬</a></li>
+            <li><a href="/search?from_recent=1&amp;q=ipzz">ipzz</a></li>
+            <li><a href="/search?from_recent=1&amp;q=abf">abf</a></li>
+            <li><a href="/search?from_recent=1&amp;q=%E6%AF%8D%E4%B9%B3">母乳</a></li>
+            <li><a href="/search?from_recent=1&amp;q=%E5%82%AC%E7%9C%A0">催眠</a></li>
+        </ul>
+        <div class="is-clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="search-image-modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Result of search by image (beta)</p>
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="search-image-loading">searching...</div>
+    </section>
+  </div>
+</div>
+
+<div class="modal" id="select-search-image-modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Please select a search target (beta)</p>
+      <button class="delete" aria-label="close"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="buttons is-justify-content-center">
+        <botton class="button is-info is-large button-search-by-image" data-target="actor">
+          Identify Actors by Image
+        </botton>
+        <botton class="button is-info is-large button-search-by-image" data-target="movie">
+          Identify Movies by Image
+        </botton>
+      </div>
+    </section>
+  </div>
+</div>
+
+
+          
+
+
+            
+<div class="tabs main-tabs is-boxed">
+  <ul>
+    <li>
+      <a class="navbar-item" href="/rankings/playback">
+        <span>Top Played</span>
+</a>    </li>
+      <li class="">
+        <a href="/guess">
+          <span>YouMayAlsoLike</span>
+        </a>
+      </li>
+    <li class="is-active">
+      <a href="/">
+        <span>All</span>
+      </a>
+    </li>
+    <li class="">
+      <a href="/censored">
+        <span>Censored</span>
+      </a>
+    </li>
+    <li class="">
+      <a href="/uncensored">
+        <span>Uncensored</span>
+      </a>
+    </li>
+    <li class="">
+      <a href="/western">
+        <span>Western</span>
+      </a>
+    </li>
+    <li class="">
+      <a href="/fc2">
+        <span>FC2</span>
+      </a>
+    </li>
+    <li class="">
+      <a href="/anime">
+        <span>Anime</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div class="toolbar">
+    <div class="button-group">
+      <div class="buttons has-addons">
+        <a class="button is-small is-info is-selected" href="/?lm=h&amp;vft=1">Large Cover</a>
+        <a class="button is-small " href="/?lm=v&amp;vft=1">Small Cover</a>
+      </div>
+    </div>
+  <div class="button-group">
+    <div class="buttons has-addons">
+        <a title="Movies that can be played online" class="button is-small" href="/?vft=4&amp;vst=3">
+          <span class="icon is-small play-icon">
+            <i class="icon-play"></i>
+          </span>
+          <span>Playable</span>
+</a>        <a title="Movies that can be played online with CN subtitle" class="button is-small" href="/?vft=5&amp;vst=3">
+          <span class="icon is-small play-icon-cn">
+            <i class="icon-play"></i>
+          </span>
+          <span>Playable(CNSUB)</span>
+</a>      <a title="Downloadable movies" class="button is-small is-info is-selected" href="javascript:;">Downloadable</a>
+        <a title="Movies with subtitles" class="button is-small" href="/?vft=2">Subtitles</a>
+      <a title="Movies with reviews, sorted by first review date" class="button is-small" href="/?vft=3">Reviews</a>
+      <a title="All movies, sorted by released date" class="button is-small" href="/?vft=0">All</a>
+    </div>
+  </div>
+    <div class="button-group">
+      <div class="buttons has-addons">
+        <a class="button is-small is-info is-selected" href="/?vft=1&amp;vst=2">Sorted by Magnet Updated Date</a>
+        <a class="button is-small " href="/?vft=1&amp;vst=1">Sorted by Released Date</a>
+      </div>
+    </div>
+</div>
+
+  <div class="movie-list h cols-4 vcols-8">
+        <div class="item">
+          <a href="/v/OXKPMy" class="box" title="ノンフィクション ハメられた女たち 20名-汚れた人妻-">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/ox/OXKPMy.jpg" />
+            </div>
+              <div class="video-title"><strong>MBMA-010</strong> ノンフィクション ハメられた女たち 20名-汚れた人妻-</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></span>
+                  &nbsp;
+                5.0, by 6 users</span>
+            </div>
+            <div class="meta">
+              03/21/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/xAMPWA" class="box" title="巡察レディのお仕事 ～路上隠し撮り少年更生精子回収編～">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/xa/xAMPWA.jpg" />
+            </div>
+              <div class="video-title"><strong>SENN-067</strong> 巡察レディのお仕事 ～路上隠し撮り少年更生精子回収編～</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                3.5, by 12 users</span>
+            </div>
+            <div class="meta">
+              03/26/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/1AyR99" class="box" title="浴衣が似合う多種多様な美女3名の超肉食系.NTR.ウブかわ娘と発射回数無制限密会オフパコ温泉旅行！！">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/1a/1AyR99.jpg" />
+            </div>
+              <div class="video-title"><strong>FTO-014</strong> 浴衣が似合う多種多様な美女3名の超肉食系.NTR.ウブかわ娘と発射回数無制限密会オフパコ温泉旅行！！</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star gray"></i><i class="icon-star gray"></i><i class="icon-star gray"></i><i class="icon-star gray"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                0.0, by 3 users</span>
+            </div>
+            <div class="meta">
+              03/27/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/82EDQx" class="box" title="コスプレバイトのギャル軟派17">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/82/82EDQx.jpg" />
+            </div>
+              <div class="video-title"><strong>HONB-423</strong> コスプレバイトのギャル軟派17</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                3.9, by 29 users</span>
+            </div>
+            <div class="meta">
+              03/27/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/2mKg6w" class="box" title="マチアプちゃん！飲み屋デートでいちゃラブ発情コスプレエッチ！（Sさん 22歳 美容専門学校生）">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/2m/2mKg6w.jpg" />
+            </div>
+              <div class="video-title"><strong>YMDS-207</strong> マチアプちゃん！飲み屋デートでいちゃラブ発情コスプレエッチ！（Sさん 22歳 美容専門学校生）</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                4.0, by 9 users</span>
+            </div>
+            <div class="meta">
+              03/29/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/qAPZ2M" class="box" title="神出鬼没のおさわり虫！気持ち悪い粘着ストーカー害虫に嬲られ弄られる女たち～狙われた美人OL 若宮はずき">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/qa/qAPZ2M.jpg" />
+            </div>
+              <div class="video-title"><strong>YMDS-208</strong> 神出鬼没のおさわり虫！気持ち悪い粘着ストーカー害虫に嬲られ弄られる女たち～狙われた美人OL 若宮はずき</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                4.0, by 5 users</span>
+            </div>
+            <div class="meta">
+              03/29/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/3nynO3" class="box" title="処女喪失！！そしてヤリマンになった地味系女子312分 / 若松はなめ">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/3n/3nynO3.jpg" />
+            </div>
+              <div class="video-title"><strong>TEND-023</strong> 処女喪失！！そしてヤリマンになった地味系女子312分 / 若松はなめ</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></span>
+                  &nbsp;
+                5.0, by 4 users</span>
+            </div>
+            <div class="meta">
+              03/31/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/r3P3pk" class="box" title="【FANZA限定】友達の妹が可愛すぎて寝取ってしまいました / 永山遥 チェキとパンティと生写真付き">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/r3/r3P3pk.jpg" />
+            </div>
+              <div class="video-title"><strong>SAN-333</strong> 【FANZA限定】友達の妹が可愛すぎて寝取ってしまいました / 永山遥 チェキとパンティと生写真付き</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                3.0, by 9 users</span>
+            </div>
+            <div class="meta">
+              03/31/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/7yK80Z" class="box" title="Iカップ現役介護士デビュー 激しいセックスしてみたい 成実ひまり">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/7y/7yK80Z.jpg" />
+            </div>
+              <div class="video-title"><strong>GAS-522</strong> Iカップ現役介護士デビュー 激しいセックスしてみたい 成実ひまり</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></span>
+                  &nbsp;
+                5.0, by 8 users</span>
+            </div>
+            <div class="meta">
+              04/01/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/AqEVVM" class="box" title="1日中履き込んだムレムレの黒パンストで女上司たちに痴女られる美脚パラダイス 木野々葉えりかさんのチェキ付き">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/aq/AqEVVM.jpg" />
+            </div>
+              <div class="video-title"><strong>DHLD-015</strong> 1日中履き込んだムレムレの黒パンストで女上司たちに痴女られる美脚パラダイス 木野々葉えりかさんのチェキ付き</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                4.71, by 23 users</span>
+            </div>
+            <div class="meta">
+              04/01/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/Ywq33x" class="box" title="あなたの初ヌード撮らせてください！ 素人娘20人の全裸コレクション（5）">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/yw/Ywq33x.jpg" />
+            </div>
+              <div class="video-title"><strong>DROP-117</strong> あなたの初ヌード撮らせてください！ 素人娘20人の全裸コレクション（5）</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></span>
+                  &nbsp;
+                5.0, by 3 users</span>
+            </div>
+            <div class="meta">
+              04/01/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/Ww377K" class="box" title="生徒会議中にバレたらヤバイ！！リモコンバイブ恥感 宇流木さららさんのパンティと生写真付き">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/ww/Ww377K.jpg" />
+            </div>
+              <div class="video-title"><strong>DSJH-012</strong> 生徒会議中にバレたらヤバイ！！リモコンバイブ恥感 宇流木さららさんのパンティと生写真付き</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i></span>
+                  &nbsp;
+                5.0, by 8 users</span>
+            </div>
+            <div class="meta">
+              04/01/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/ZNqqZP" class="box" title="思い出のアイドルと気が狂うほど性交 とある40代プロデューサーの投稿映像 02">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/zn/ZNqqZP.jpg" />
+            </div>
+              <div class="video-title"><strong>ONEX-081</strong> 思い出のアイドルと気が狂うほど性交 とある40代プロデューサーの投稿映像 02</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                3.43, by 18 users</span>
+            </div>
+            <div class="meta">
+              04/04/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/7y852M" class="box" title="身代わり肉便器 射精しても射精しても終わらない絶倫極道オヤジとの10日間孕ませ監禁生活 北岡果林">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/7y/7y852M.jpg" />
+            </div>
+              <div class="video-title"><strong>IPZZ-564</strong> 身代わり肉便器 射精しても射精しても終わらない絶倫極道オヤジとの10日間孕ませ監禁生活 北岡果林</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                4.03, by 159 users</span>
+            </div>
+            <div class="meta">
+              03/11/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/XeE1A5" class="box" title="女上司、歪んだ刺激と躾に溺れる、SM不倫性交。昼休みはダメな部下に躾けられて…。 専属美女の『苦しみ』という快楽を解放―。 白石茉莉奈">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/xe/XeE1A5.jpg" />
+            </div>
+              <div class="video-title"><strong>JUR-194</strong> 女上司、歪んだ刺激と躾に溺れる、SM不倫性交。昼休みはダメな部下に躾けられて…。 専属美女の『苦しみ』という快楽を解放―。 白石茉莉奈</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                4.28, by 346 users</span>
+            </div>
+            <div class="meta">
+              03/11/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/bKqDEv" class="box" title="身も心も相性抜群の2人ー。‘想い’と‘唇’が重なる濃密接吻ソープ 白峰郁美">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/bk/bKqDEv.jpg" />
+            </div>
+              <div class="video-title"><strong>JUR-201</strong> 身も心も相性抜群の2人ー。‘想い’と‘唇’が重なる濃密接吻ソープ 白峰郁美</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                3.92, by 164 users</span>
+            </div>
+            <div class="meta">
+              03/11/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/0eyYyE" class="box" title="娘かもしれない 吉高寧々 パンティと写真付き">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/0e/0eyYyE.jpg" />
+            </div>
+              <div class="video-title"><strong>FSDSS-989</strong> 娘かもしれない 吉高寧々 パンティと写真付き</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                3.58, by 38 users</span>
+            </div>
+            <div class="meta">
+              04/24/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/gy4KWG" class="box" title="ノリ良しキャラ良し即行言いくるめて即ハメ即撮影OK激ちょろいなかっぺビッチww東京観光ついでに山形県米沢市から高速バスでセックスをしに来たクセ強めの爆乳ヤリマン地味子さゆりちゃん27歳">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/gy/gy4KWG.jpg" />
+            </div>
+              <div class="video-title"><strong>BEAF-157</strong> ノリ良しキャラ良し即行言いくるめて即ハメ即撮影OK激ちょろいなかっぺビッチww東京観光ついでに山形県米沢市から高速バスでセックスをしに来たクセ強めの爆乳ヤリマン地味子さゆりちゃん27歳</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                4.57, by 17 users</span>
+            </div>
+            <div class="meta">
+              03/30/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/1AyyaY" class="box" title="【裸エプロンが超絶エロい料理系配信者】横乳&amp;後ろ姿から見えるTバック桃尻が堪らない！ねっとり味わうフェラテクでレッツおしゃぶりクッキング♪天性の可愛さと底なしの性欲で素顔もイキ顔もさらけ出す中出し2連戦！【なまハメT☆kTok】【Mizuki】">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/1a/1AyyaY.jpg" />
+            </div>
+              <div class="video-title"><strong>MAAN-1059</strong> 【裸エプロンが超絶エロい料理系配信者】横乳&amp;後ろ姿から見えるTバック桃尻が堪らない！ねっとり味わうフェラテクでレッツおしゃぶりクッキング♪天性の可愛さと底なしの性欲で素顔もイキ顔もさらけ出す中出し2連戦！【なまハメT☆kTok】【Mizuki】</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                3.0, by 11 users</span>
+            </div>
+            <div class="meta">
+              03/09/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/NQZ23Z" class="box" title="【ピストンで暴れるGカップ】女性用風俗大好き巨乳美女がエロエステ体験！際どい部分を揉みほぐされ、焦らされてマ●コ濡れ濡れ！快楽に身を任せ膣奥までずっぽり挿入！中に出しても全然ヤり足りない連続セックス！！【PornGirl】【riho】">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/nq/NQZ23Z.jpg" />
+            </div>
+              <div class="video-title"><strong>MAAN-1060</strong> 【ピストンで暴れるGカップ】女性用風俗大好き巨乳美女がエロエステ体験！際どい部分を揉みほぐされ、焦らされてマ●コ濡れ濡れ！快楽に身を任せ膣奥までずっぽり挿入！中に出しても全然ヤり足りない連続セックス！！【PornGirl】【riho】</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                3.67, by 8 users</span>
+            </div>
+            <div class="meta">
+              03/15/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/XeqeR1" class="box" title="サディスティックな未亡人 怜子 / 小早川怜子">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/xe/XeqeR1.jpg" />
+            </div>
+              <div class="video-title"><strong>SAN-330</strong> サディスティックな未亡人 怜子 / 小早川怜子</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                3.88, by 14 users</span>
+            </div>
+            <div class="meta">
+              03/31/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/5nKnDz" class="box" title="皆月ひかるのファン感謝祭">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/5n/5nKnDz.jpg" />
+            </div>
+              <div class="video-title"><strong>SAN-332</strong> 皆月ひかるのファン感謝祭</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                3.63, by 20 users</span>
+            </div>
+            <div class="meta">
+              03/31/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/e848Vr" class="box" title="ひとづまと、温泉と、不倫と。其の参">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/e8/e848Vr.jpg" />
+            </div>
+              <div class="video-title"><strong>OLM-169</strong> ひとづまと、温泉と、不倫と。其の参</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star gray"></i><i class="icon-star gray"></i><i class="icon-star gray"></i><i class="icon-star gray"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                0.0, by 4 users</span>
+            </div>
+            <div class="meta">
+              03/31/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/7yKynV" class="box" title="どこまでデキる？出張メンエス 欲求不満な人妻マッサージ師にお願いして一発ヤッちゃいました！ vol.2">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/7y/7yKynV.jpg" />
+            </div>
+              <div class="video-title"><strong>OLM-170</strong> どこまでデキる？出張メンエス 欲求不満な人妻マッサージ師にお願いして一発ヤッちゃいました！ vol.2</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star gray"></i><i class="icon-star gray"></i><i class="icon-star gray"></i><i class="icon-star gray"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                0.0, by 2 users</span>
+            </div>
+            <div class="meta">
+              03/31/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/P9M9Yv" class="box" title="ムチムチ女盛り 義母との禁断SEX">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/p9/P9M9Yv.jpg" />
+            </div>
+              <div class="video-title"><strong>OLM-171</strong> ムチムチ女盛り 義母との禁断SEX</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star gray"></i><i class="icon-star gray"></i><i class="icon-star gray"></i><i class="icon-star gray"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                0.0, by 4 users</span>
+            </div>
+            <div class="meta">
+              03/31/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/z4x49z" class="box" title="【FANZA限定】いつも悶々とアソコが疼いてるお姉さんが熟れた肉体を中年オヤジに乱開発され心もカラダも大解放イキまくり！ / 音琴るい パンティと生写真付き">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/z4/z4x49z.jpg" />
+            </div>
+              <div class="video-title"><strong>OLM-175</strong> 【FANZA限定】いつも悶々とアソコが疼いてるお姉さんが熟れた肉体を中年オヤジに乱開発され心もカラダも大解放イキまくり！ / 音琴るい パンティと生写真付き</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                4.2, by 14 users</span>
+            </div>
+            <div class="meta">
+              03/31/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/J0A0yR" class="box" title="【FANZA限定】おっとり美人お姉さん 変態オヤジの美脚フェチプレイにしっぽり発情！パンスト穿いたまま膣中激イキ！ / 小春まり パンティと生写真付き">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/j0/J0A0yR.jpg" />
+            </div>
+              <div class="video-title"><strong>OLM-176</strong> 【FANZA限定】おっとり美人お姉さん 変態オヤジの美脚フェチプレイにしっぽり発情！パンスト穿いたまま膣中激イキ！ / 小春まり パンティと生写真付き</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                4.15, by 27 users</span>
+            </div>
+            <div class="meta">
+              03/31/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/wKpKm2" class="box" title="ハゲオヤジに寝取られたいたいけな幼妻たち260分">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/wk/wKpKm2.jpg" />
+            </div>
+              <div class="video-title"><strong>SAN-336</strong> ハゲオヤジに寝取られたいたいけな幼妻たち260分</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                3.5, by 7 users</span>
+            </div>
+            <div class="meta">
+              03/31/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/BzKzQd" class="box" title="自分の意に反してあっさりと寝取られてしまった幼妻たち260分">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/bz/BzKzQd.jpg" />
+            </div>
+              <div class="video-title"><strong>SAN-337</strong> 自分の意に反してあっさりと寝取られてしまった幼妻たち260分</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                4.0, by 11 users</span>
+            </div>
+            <div class="meta">
+              03/31/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/qAQXMe" class="box" title="嫁の母と俺の父 白木優子">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/qa/qAQXMe.jpg" />
+            </div>
+              <div class="video-title"><strong>ALDN-439</strong> 嫁の母と俺の父 白木優子</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                4.19, by 62 users</span>
+            </div>
+            <div class="meta">
+              03/25/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-warning">CnSub DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/e8p9vb" class="box" title="同僚の元嫁 前からいいと思ってたあの同僚の妻が別れた後に毎回中出しを求めるエロ過ぎる性欲妻だったなんて… 川上ゆう">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/e8/e8p9vb.jpg" />
+            </div>
+              <div class="video-title"><strong>ALDN-440</strong> 同僚の元嫁 前からいいと思ってたあの同僚の妻が別れた後に毎回中出しを求めるエロ過ぎる性欲妻だったなんて… 川上ゆう</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                4.38, by 40 users</span>
+            </div>
+            <div class="meta">
+              03/25/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-warning">CnSub DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/7y8A9P" class="box" title="お義母さん、にょっ女房よりずっといいよ… 栗山さつき">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/7y/7y8A9P.jpg" />
+            </div>
+              <div class="video-title"><strong>ALDN-441</strong> お義母さん、にょっ女房よりずっといいよ… 栗山さつき</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                4.25, by 30 users</span>
+            </div>
+            <div class="meta">
+              03/25/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-warning">CnSub DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/KknzB0" class="box" title="妻が突然中出しを要求してきた理由 伊東沙蘭">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/kk/KknzB0.jpg" />
+            </div>
+              <div class="video-title"><strong>ALDN-445</strong> 妻が突然中出しを要求してきた理由 伊東沙蘭</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                4.29, by 115 users</span>
+            </div>
+            <div class="meta">
+              03/25/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-warning">CnSub DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/WwdxMq" class="box" title="純文学みたいな禁断の愛に憧れ叔父を挑発する小悪魔姪っ子 宮城りえ 生写真とパンティ付き">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/ww/WwdxMq.jpg" />
+            </div>
+              <div class="video-title"><strong>AMBI-206</strong> 純文学みたいな禁断の愛に憧れ叔父を挑発する小悪魔姪っ子 宮城りえ 生写真とパンティ付き</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                4.19, by 59 users</span>
+            </div>
+            <div class="meta">
+              03/20/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-warning">CnSub DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/96dRBX" class="box" title="引きこもりの妹にマッチングアプリをさせてみたら… 有馬美玖 生写真とパンティ付き">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/96/96dRBX.jpg" />
+            </div>
+              <div class="video-title"><strong>AMBI-207</strong> 引きこもりの妹にマッチングアプリをさせてみたら… 有馬美玖 生写真とパンティ付き</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                3.8, by 81 users</span>
+            </div>
+            <div class="meta">
+              03/20/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-warning">CnSub DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/pkPBqB" class="box" title="THE ドキュメント 本能丸出しでする絶頂SEX 性欲が強いスケベなむっつり妻が精子まみれ乱交中出しイキ狂う 神村さつき">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/pk/pkPBqB.jpg" />
+            </div>
+              <div class="video-title"><strong>BIJN-270</strong> THE ドキュメント 本能丸出しでする絶頂SEX 性欲が強いスケベなむっつり妻が精子まみれ乱交中出しイキ狂う 神村さつき</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                3.5, by 41 users</span>
+            </div>
+            <div class="meta">
+              03/04/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-warning">CnSub DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/J0OwAd" class="box" title="【FANZA限定】THE ドキュメント 本能丸出しでする絶頂SEX Iカップムチムチスケベ妻が快楽絶頂乱交イキ狂い 仲野梢 パンティと生写真付き">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/j0/J0OwAd.jpg" />
+            </div>
+              <div class="video-title"><strong>BIJN-271</strong> 【FANZA限定】THE ドキュメント 本能丸出しでする絶頂SEX Iカップムチムチスケベ妻が快楽絶頂乱交イキ狂い 仲野梢 パンティと生写真付き</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                3.74, by 86 users</span>
+            </div>
+            <div class="meta">
+              03/19/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-warning">CnSub DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/gyOGPq" class="box" title="24時間居座り集団中出しレ●プ06 セレブ美人妻 Yさん">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/gy/gyOGPq.jpg" />
+            </div>
+              <div class="video-title"><strong>BONY-138</strong> 24時間居座り集団中出しレ●プ06 セレブ美人妻 Yさん</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                4.06, by 66 users</span>
+            </div>
+            <div class="meta">
+              03/25/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-warning">CnSub DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/82Xmd3" class="box" title="魅惑の黒パンスト女上司 卯水咲流 生写真とパンティ付き">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/82/82Xmd3.jpg" />
+            </div>
+              <div class="video-title"><strong>CLOT-031</strong> 魅惑の黒パンスト女上司 卯水咲流 生写真とパンティ付き</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                4.41, by 123 users</span>
+            </div>
+            <div class="meta">
+              03/20/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-warning">CnSub DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+        <div class="item">
+          <a href="/v/mOpOPZ" class="box" title="えっちぃコソ練してみる？お節介な幼馴染みの澪は早漏体質なのにボクをHow to育精 石川澪">
+            <div class="cover ">
+              <img loading="lazy" src="https://c0.jdbstatic.com/covers/mo/mOpOPZ.jpg" />
+            </div>
+              <div class="video-title"><strong>MIDA-101</strong> えっちぃコソ練してみる？お節介な幼馴染みの澪は早漏体質なのにボクをHow to育精 石川澪</div>
+            <div class="score">
+              <span class="value"><span class="score-stars"><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star"></i><i class="icon-star gray"></i></span>
+                  &nbsp;
+                4.35, by 443 users</span>
+            </div>
+            <div class="meta">
+              04/01/2025
+            </div>
+            <div class="tags has-addons">
+                    <span class="tag is-success">DL</span>
+                  <span class="tag is-info">Today</span>
+        </div>
+      </a>
+    </div>
+</div>
+  
+
+  <nav class="pagination">
+    
+    <a rel="next" class="pagination-next" href="/?page=2">Next</a>
+
+    <ul class="pagination-list">
+      
+          <li>
+  <a class="pagination-link is-current" href="/">1</a>
+</li>
+
+          <li>
+  <a rel="next" class="pagination-link" href="/?page=2">2</a>
+</li>
+
+          <li>
+  <a class="pagination-link" href="/?page=3">3</a>
+</li>
+
+          <li>
+  <a class="pagination-link" href="/?page=4">4</a>
+</li>
+
+          <li>
+  <a class="pagination-link" href="/?page=5">5</a>
+</li>
+
+          <li>
+  <a class="pagination-link" href="/?page=6">6</a>
+</li>
+
+          <li>
+  <span class="pagination-ellipsis">
+    &hellip;
+  </span>
+</li>
+
+    </ul>
+  </nav>
+
+
+
+        </div>
+      </section>
+      <nav id="footer" class="navbar is-dark is-fluid">
+  <div class="navbar-start">
+    <a class="navbar-item has-text-white-bis" href="/about">About</a>
+    <a class="navbar-item has-text-white-bis" href="/terms">Terms</a>
+    <a class="navbar-item has-text-white-bis" href="/privacy">Privacy</a>
+    <a class="navbar-item has-text-white-bis" href="/feedbacks/new">Advertising</a>
+    <a class="navbar-item has-text-white-bis" href="https://www.rtalabel.org">RTA</a>
+    <!--<a class="navbar-item has-text-white-bis" href="/robot">Robot</a>-->
+  </div>
+  <div class="navbar-end">
+    <span class="navbar-item has-text-white-bis">&copy;2025 javdb456.com </span>
+  </div>
+</nav>
+<div class="float-buttons">
+  <a class="material-scrolltop" href="javascript: void(0);">TOP</a>
+</div>
+  <script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(72255274, "init", {
+          clickmap:true,
+          trackLinks:true,
+          accurateTrackBounce:true
+    });
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/72255274" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+
+    </body>
+  </html>
